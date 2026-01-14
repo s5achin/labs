@@ -14,6 +14,8 @@ sudo nano /etc/profile.d/maven.sh
 
 export MAVEN_HOME=/opt/maven
 export PATH=$PATH:$MAVEN_HOME/bin (paste this inside file)
+source /etc/profile.d/maven.sh (then load this)
+
 
 
 
