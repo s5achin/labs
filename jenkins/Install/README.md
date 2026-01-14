@@ -7,12 +7,16 @@ sudo apt-get install -y fontconfig openjdk-17-jre openjdk-17-jdk
 ```
 ### Install Maven  ( on Jenkins machine )
 ```
-cd /tmp ; sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
-cd /tmp ; sudo tar -xzf apache-maven-3.9.6-bin.tar.gz -C  /opt/
-mv /opt/apache-maven-3.9.6 /opt/maven
-sudo echo "MAVEN_HOME=\"/opt/maven\"" >> /etc/profile
-sudo echo "PATH=\$MAVEN_HOME/bin:\$PATH" >> /etc/profile
-source /etc/profile
+wget https://archive.apache.org/dist/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+tar -xvzf apache-maven-3.9.6-bin.tar.gz
+sudo mv apache-maven-3.9.6 /opt/maven
+sudo nano /etc/profile.d/maven.sh
+
+export MAVEN_HOME=/opt/maven
+export PATH=$PATH:$MAVEN_HOME/bin (paste this inside file)
+
+
+
 ````
 ### Install Jenkins
 ```
